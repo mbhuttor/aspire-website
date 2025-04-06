@@ -1,0 +1,197 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+title: "Academic Calendar"
+---
+
+<Layout>
+  <section class="calendar-section">
+    <!-- Background Floating Icons -->
+    <div class="floating-background-icons">
+      <!-- Book -->
+      <div class="floating-icon icon-book">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="80" height="80">
+          <path fill="#60a5fa" d="M4 10v44l24-6v-44z" />
+          <path fill="#facc15" d="M36 4v44l24 6V10z" />
+          <path fill="#fff" d="M28 4v44l8 2V6z" opacity="0.3"/>
+        </svg>
+      </div>
+
+      <!-- Pencil -->
+      <div class="floating-icon icon-pencil">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="80" height="80">
+          <path fill="#f87171" d="M4 60l12-4 36-36-8-8-36 36z" />
+          <path fill="#374151" d="M52 20l4-4-8-8-4 4z" />
+          <path fill="#fcd34d" d="M16 56l-8 4 4-8z" />
+        </svg>
+      </div>
+
+      <!-- Calendar -->
+      <div class="floating-icon icon-calendar">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="75" height="75">
+          <rect width="56" height="48" x="4" y="10" fill="#fef08a" rx="4" />
+          <rect width="56" height="12" x="4" y="10" fill="#facc15" />
+          <circle cx="16" cy="30" r="3" fill="#ef4444"/>
+          <circle cx="32" cy="30" r="3" fill="#3b82f6"/>
+          <circle cx="48" cy="30" r="3" fill="#10b981"/>
+        </svg>
+      </div>
+
+      <!-- Math Symbol -->
+      <div class="floating-icon icon-math">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="70" height="70">
+          <path d="M10 32h44" stroke="#38bdf8" stroke-width="4"/>
+          <path d="M32 10v44" stroke="#34d399" stroke-width="4"/>
+          <text x="50%" y="57%" dominant-baseline="middle" text-anchor="middle" fill="#f43f5e" font-size="24" font-family="Arial">÷</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+      <h1 class="calendar-title"> Aspire College Gamber – Academic Calendar</h1>
+      <p class="calendar-subtitle">
+        Stay updated with exam schedules, holidays, and academic milestones.
+      </p>
+
+      <div class="calendar-frame">
+        <!-- Spiral Binding (manually added holes) -->
+        <div class="spiral-binding">
+          <div class="spiral-hole" style="top: 12px;"></div>
+          <div class="spiral-hole" style="top: 52px;"></div>
+          <div class="spiral-hole" style="top: 92px;"></div>
+          <div class="spiral-hole" style="top: 132px;"></div>
+          <div class="spiral-hole" style="top: 172px;"></div>
+          <div class="spiral-hole" style="top: 212px;"></div>
+          <div class="spiral-hole" style="top: 252px;"></div>
+          <div class="spiral-hole" style="top: 292px;"></div>
+          <div class="spiral-hole" style="top: 332px;"></div>
+          <div class="spiral-hole" style="top: 372px;"></div>
+          <div class="spiral-hole" style="top: 412px;"></div>
+          <div class="spiral-hole" style="top: 452px;"></div>
+        </div>
+
+        <!-- Embedded Calendar -->
+        <iframe
+          src="https://calendar.google.com/calendar/embed?src=3e996ce75ba630ac4aa53cee9cfbea40918adf6196c5d0f427361199dd688341%40group.calendar.google.com&ctz=Asia%2FKarachi"
+          frameborder="0"
+          scrolling="no"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .calendar-section {
+      position: relative;
+      background: #fdfcf7; /* Light paper background */
+      padding: 4rem 1rem;
+      overflow: hidden;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .calendar-title {
+      font-size: 2.75rem;
+      font-weight: 800;
+      color:rgb(238, 18, 18);
+      font-family: 'Merriweather', serif;
+      margin-bottom: 0.5rem;
+    }
+
+    .calendar-subtitle {
+      font-size: 1.2rem;
+      color:rgb(237, 6, 6);
+      font-family: 'Open Sans', sans-serif;
+      margin-bottom: 2.5rem;
+    }
+
+    .calendar-frame {
+      position: relative;
+      background:
+        linear-gradient(transparent 97%, rgba(0, 0, 0, 0.02) 98%),
+        repeating-linear-gradient(
+          to bottom,
+           #facc15;,
+           #facc15;1px,
+          transparent 1px,
+          transparent 30px
+        ),
+        #ffffff;
+      border: 3px solid #facc15;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+    }
+
+    .calendar-frame iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      display: block;
+    }
+
+    /* Spiral Binding */
+    .spiral-binding {
+      position: absolute;
+      left: -14px;
+      top: 0;
+      bottom: 0;
+      width: 14px;
+      background: transparent;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .spiral-hole {
+      position: absolute;
+      left: 2px;
+      width: 10px;
+      height: 10px;
+      background:rgb(39, 114, 226);
+      border-radius: 50%;
+      box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.15);
+    }
+
+    .floating-background-icons {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .floating-icon {
+      position: absolute;
+      opacity: 0.12;
+      animation: float 12s ease-in-out infinite;
+    }
+
+    .icon-book { top: 8%; left: 5%; }
+    .icon-pencil { bottom: 10%; right: 6%; }
+    .icon-calendar { bottom: 20%; left: 10%; }
+    .icon-math { top: 25%; right: 8%; }
+    .icon-pencil { bottom: 10%; right: 6%; }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .calendar-title { font-size: 2rem; }
+      .calendar-subtitle { font-size: 1rem; }
+      .calendar-frame iframe { height: 450px; }
+      .floating-icon svg { width: 50px; height: 50px; }
+      .spiral-binding { display: none; }
+    }
+  </style>
+</Layout>

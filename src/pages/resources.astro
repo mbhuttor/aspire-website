@@ -1,0 +1,85 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { Image } from 'astro:assets';
+
+import KhanAcademyLogo from '~/assets/images/khan-academy.png';
+import SabaqFoundationLogo from '~/assets/images/sabaq-foundation.png';
+import StudentPortalLogo from '~/assets/images/student-portal.png';
+
+const resources = [
+  {
+    id: 1,
+    title: 'Khan Academy',
+    description: 'Aspire educators refer Khan Academy to their students for further academic assistance. It covers subjects like Mathematics, Physics, Chemistry, and more.',
+    image: KhanAcademyLogo,
+    link: 'https://www.khanacademy.org/',
+  },
+  {
+    id: 2,
+    title: 'Sabaq Foundation',
+    description: 'Free online learning resources for students of different educational boards, providing video lectures and study materials.',
+    image: SabaqFoundationLogo,
+    link: 'https://www.sabaq.pk/',
+  },
+  {
+    id: 3,
+    title: 'Aspire Student Portal',
+    description: 'Access your student dashboard, check results, attendance, and updates from Aspire Colleges.',
+    image: StudentPortalLogo,
+    link: 'https://studentportal.aspirecolleges.edu.pk/login',
+  }
+];
+---
+
+<Layout>
+  <section class="py-20 bg-[#0c1a2a] min-h-screen relative overflow-hidden font-serif">
+    <!-- Background Floating Icons -->
+    <div class="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
+      <iconify-icon icon="mdi:school" width="60" style="position: absolute; top: 10%; left: 10%; color: #ff6b6b;"></iconify-icon>
+      <iconify-icon icon="mdi:lightbulb-on-outline" width="50" style="position: absolute; top: 30%; right: 15%; color: #facc15;"></iconify-icon>
+      <iconify-icon icon="mdi:book-education" width="50" style="position: absolute; bottom: 25%; left: 20%; color: #38bdf8;"></iconify-icon>
+      <iconify-icon icon="mdi:earth" width="70" style="position: absolute; bottom: 15%; right: 10%; color: #34d399;"></iconify-icon>
+      <iconify-icon icon="mdi:calculator" width="50" style="position: absolute; top: 55%; left: 50%; color: #c084fc;"></iconify-icon>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <!-- Section Title -->
+      <h2 class="text-4xl text-center mb-6" style="font-family: Georgia, serif; color:rgb(255, 255, 253);">
+        Explore Our Educational Resources
+      </h2>
+
+      <!-- Resources Grid -->
+      <div class="grid md:grid-cols-3 gap-10">
+        {resources.map((resource, i) => (
+          <div key={resource.id} class="bg-white shadow-xl rounded-xl p-6 flex flex-col items-center text-center hover:scale-105 transition-transform duration-300 relative">
+            <!-- Color Pencil SVG Bottom Right Corner -->
+            <svg class="absolute bottom-[-12px] right-[-12px] w-10 h-10" viewBox="0 0 24 24" fill="none" stroke={i % 2 === 0 ? '#3b82f6' : '#10b981'} stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 3l4 4L8 19H4v-4L16 3z" />
+              <path d="M14 5l5 5" />
+            </svg>
+
+            <!-- Image -->
+            <div class="w-28 h-28 flex items-center justify-center">
+              <Image src={resource.image} alt={resource.title} width={112} height={112} class="rounded-md shadow-md" />
+            </div>
+
+            <!-- Title -->
+            <h3 class="mt-5 text-lg font-semibold text-gray-900">{resource.title}</h3>
+            <p class="mt-3 text-gray-700 text-sm leading-relaxed">{resource.description}</p>
+
+            <!-- Fixed Button -->
+            <div class="mt-auto pt-5">
+              <a href={resource.link} target="_blank" 
+                class="inline-block w-full text-center bg-red-600 text-white py-2 px-6 rounded-full text-sm font-semibold hover:bg-red-700 transition duration-300">
+                Visit Link
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<!-- Iconify Script -->
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" client:load></script>

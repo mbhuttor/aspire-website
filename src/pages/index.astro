@@ -1,399 +1,408 @@
+
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
-import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
-import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import Content from '~/components/widgets/Content.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-
-const metadata = {
-  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
-  ignoreTitleTemplate: true,
-};
+title: "BI College Aspire Gamber — Excellence in Intermediate Education";
 ---
 
-<Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+<Layout>
+  <!-- Typing Intro -->
+  <div id="hero-intro">
+    <h1 id="animated-heading"></h1>
+  </div>
 
-  <Hero
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
-      },
-      { text: 'Learn more', href: '#features' },
-    ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
-  >
-    <Fragment slot="title">
-      Free template for <span class="hidden xl:inline">creating websites with</span>
-      <span class="text-accent dark:text-white highlight"> Astro 5.0</span> + Tailwind CSS
-    </Fragment>
+  <!-- Hero Section -->
+  <div id="hero-main" style="display: none;">
+    <!-- Slim Banner -->
+    <div class="announcement-strip">
+      <div class="announcement-content centered">
+        <span class="announcement-text">
+          Enroll now at BI College Aspire Gamber — Scholarships, expert mentorship & early success.
+        </span>
+        <div class="announcement-buttons">
+          <a href="#programs" class="banner-button">View Programs</a>
+          <a href="https://aspirecolleges.edu.pk/online-admission/" class="banner-button">Apply Now</a>
+        </div>
+      </div>
+    </div>
 
-    <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 5.0
-        + Tailwind CSS.</span
-      >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
-      Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &
-      Blogs.
-    </Fragment>
-  </Hero>
+    <!-- Hero Video -->
+    <div class="hero-video-wrapper">
+      <video autoplay muted loop playsinline class="hero-video">
+        <source src="/videos/welcome.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </div>
 
-  <!-- Note Widget ******************* -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" client:load></script>
+  <script client:load>
+    function initTypingHero() {
+      const text = "BI College Aspire Gamber: Start Your Journey";
+      const headingEl = document.getElementById("animated-heading");
+      const intro = document.getElementById("hero-intro");
+      const main = document.getElementById("hero-main");
 
-  <Note />
+      if (!headingEl || !intro || !main) return;
 
-  <!-- Features Widget *************** -->
+      let index = 0;
+      clearTimeout(window.typingTimeout);
+      headingEl.innerHTML = '';
+      intro.style.display = "flex";
+      main.style.display = "none";
 
-  <Features
-    id="features"
-    tagline="Features"
-    title="What you get with AstroWind"
-    subtitle="One of the most professional and comprehensive templates currently on the market. Most starred & forked Astro theme in 2022, 2023 and 2024."
-    items={[
-      {
-        title: 'Astro + Tailwind CSS Integration',
-        description:
-          'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
-        icon: 'tabler:brand-tailwind',
-      },
-      {
-        title: 'Ready-to-use Components',
-        description:
-          'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
-        icon: 'tabler:components',
-      },
-      {
-        title: 'Best Practices',
-        description:
-          'Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value.',
-        icon: 'tabler:list-check',
-      },
-      {
-        title: 'Excellent Page Speed',
-        description:
-          'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
-        icon: 'tabler:rocket',
-      },
-      {
-        title: 'Search Engine Optimization (SEO)',
-        description:
-          "SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience.",
-        icon: 'tabler:arrows-right-left',
-      },
-      {
-        title: 'Open to new ideas and contributions',
-        description:
-          'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
-        icon: 'tabler:bulb',
-      },
-    ]}
-  />
+      function typeLetter() {
+        if (index < text.length) {
+          headingEl.innerHTML += text.charAt(index);
+          index++;
+          window.typingTimeout = setTimeout(typeLetter, 90);
+        } else {
+          setTimeout(() => {
+            intro.style.display = "none";
+            main.style.display = "block";
+          }, 1000);
+        }
+      }
 
-  <!-- Content Widget **************** -->
+      typeLetter();
+    }
 
-  <Content
-    isReversed
-    tagline="Inside template"
-    title="AstroWind's Blueprint: Fun Meets Functionality!"
-    items={[
-      {
-        title: 'Built on top of Astro 5.0',
-        description:
-          'Benefiting from the performance and developer-friendly features of this modern static site generator.',
-      },
-      {
-        title: 'Styled using Tailwind CSS',
-        description:
-          'Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework.',
-      },
-      {
-        title: 'Cross-browser compatibility',
-        description:
-          'Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
-      Gain a competitive advantage by incorporating industry leading practices
-    </Fragment>
+    window.addEventListener("DOMContentLoaded", initTypingHero);
+    document.addEventListener("astro:after-swap", initTypingHero);
+  </script>
 
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: #fff;
+      color: #1e293b;
+    }
 
-  <!-- Content Widget **************** -->
+    h1, h2, h3 {
+      font-family: 'Georgia', serif;
+    }
 
-  <Content
-    isAfterContent
-    items={[
-      {
-        title: 'High level of customization',
-        description: `Tailor the template effortlessly to match your brand's identity and requirements, making your website distinct and saving you time.`,
-      },
-      {
-        title: 'Multiple layout possibilities',
-        description:
-          'Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation.',
-      },
-      {
-        title: 'Fully responsive design',
-        description:
-          "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience.",
-      },
-      {
-        title: 'Integration of media',
-        description:
-          'Seamlessly incorporate images, videos, and multimedia elements that enhance your content and engage visitors effectively.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: 'Blueprint Image',
-    }}
-  >
-    <Fragment slot="content">Ensure your online presence truly represents you.</Fragment>
+    #hero-intro {
+      background: black;
+      color: white;
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
 
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
+    .announcement-strip {
+      background: #fef08a;
+      padding: 0.3rem 1rem;
+    }
 
-  <!-- Content Widget **************** -->
+    .announcement-content.centered {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
 
-  <Content
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: 'Enhanced user engagement',
-        description:
-          'Captivate your audience with interactive elements, intuitive navigation, and visually appealing layouts, encouraging longer visits.',
-      },
-      {
-        title: 'Continuous improvement',
-        description:
-          'Ensure your website stays aligned with the latest trends and technologies through regular updates and enhancements.',
-      },
-      {
-        title: 'Time and resource efficiency',
-        description:
-          'Skip the time-consuming process of building a website from scratch and launch your online presence sooner with AstroWind.',
-      },
-      {
-        title: 'Community support',
-        description: `Join the growing AstroWind community for insights, resources, and assistance, ensuring you're never alone on your web development journey.`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
-    }}
-  >
-    <Fragment slot="content">Designed to foster growth and success.</Fragment>
+    .announcement-text {
+      font-weight: 600;
+      color: #1e293b;
+      font-size: 1rem;
+      text-align: center;
+    }
 
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
+    .announcement-buttons {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
-  <!-- Steps Widget ****************** -->
+    .banner-button {
+      background: #dc2626;
+      color: white;
+      padding: 0.4rem 1.25rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+    }
 
-  <Steps
-    title="Get your dream website up and running in no time with AstroWind."
-    items={[
-      {
-        title: 'Step 1: <span class="font-medium">Download</span>',
-        description:
-          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
-        icon: 'tabler:package',
-      },
-      {
-        title: 'Step 2: <span class="font-medium">Add content</span>',
-        description:
-          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
-        icon: 'tabler:letter-case',
-      },
-      {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
-        description:
-          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
-        icon: 'tabler:paint',
-      },
-      {
-        title: 'Ready!',
-        icon: 'tabler:check',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
-    }}
-  />
+    .hero-video-wrapper {
+      width: 100%;
+      background: linear-gradient(to bottom, #fef08a, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+    }
 
-  <!-- Features2 Widget ************** -->
+    .hero-video {
+      width: 100%;
+      max-width: 1000px;
+      height: auto;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
 
-  <Features2
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    tagline="Components"
-    items={[
-      {
-        title: 'Headers',
-        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
-        icon: 'flat-color-icons:template',
-      },
-      {
-        title: 'Heros',
-        description:
-          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
-        icon: 'flat-color-icons:gallery',
-      },
-      {
-        title: 'Features',
-        description:
-          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
-        icon: 'flat-color-icons:approval',
-      },
-      {
-        title: 'Content',
-        description:
-          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-        icon: 'flat-color-icons:document',
-      },
-      {
-        title: 'Call-to-Action',
-        description:
-          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
-        icon: 'flat-color-icons:advertising',
-      },
-      {
-        title: 'Pricing',
-        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
-        icon: 'flat-color-icons:currency-exchange',
-      },
-      {
-        title: 'Testimonial',
-        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
-        icon: 'flat-color-icons:voice-presentation',
-      },
-      {
-        title: 'Contact',
-        description:
-          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
-        icon: 'flat-color-icons:business-contact',
-      },
-      {
-        title: 'Footers',
-        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
-        icon: 'flat-color-icons:database',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
+    @media (max-width: 768px) {
+      .announcement-buttons {
+        flex-direction: column;
+      }
 
-  <!-- HighlightedPosts Widget ******* -->
+      .hero-video {
+        max-width: 100%;
+      }
+    }
+  </style>
 
-  <BlogLatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
-                `}
-  />
+  <!-- Intermediate Programs -->
+  <section id="programs" class="programs-section">
+    <h2 class="section-title">Our Intermediate Programs</h2>
+    <p class="section-subtitle">Choose from our specialized Intermediate education programs to build your career.</p>
+    <div class="programs-grid">
+      <div class="program-card">
+        <iconify-icon icon="tabler:heartbeat" width="36" height="36" class="program-icon" />
+        <div class="program-meta">
+          <span class="program-tag">Science</span>
+          <h3>F.SC Pre-Medical</h3>
+          <p>Explore biology, chemistry, and physics for a career in health or medicine.</p>
+          <a href="#admissions" class="learn-more">Learn More →</a>
+        </div>
+      </div>
+      <div class="program-card">
+        <iconify-icon icon="tabler:tools" width="36" height="36" class="program-icon" />
+        <div class="program-meta">
+          <span class="program-tag">Engineering</span>
+          <h3>F.SC Pre-Engineering</h3>
+          <p>Prepare for university-level engineering with math, physics, and critical thinking.</p>
+          <a href="#admissions" class="learn-more">Learn More →</a>
+        </div>
+      </div>
+      <div class="program-card">
+        <iconify-icon icon="tabler:palette" width="36" height="36" class="program-icon" />
+        <div class="program-meta">
+          <span class="program-tag">Arts</span>
+          <h3>F.A</h3>
+          <p>A creative and thoughtful path through arts, literature, and media studies.</p>
+          <a href="#admissions" class="learn-more">Learn More →</a>
+        </div>
+      </div>
+      <div class="program-card">
+        <iconify-icon icon="tabler:device-laptop" width="36" height="36" class="program-icon" />
+        <div class="program-meta">
+          <span class="program-tag">Technology</span>
+          <h3>I.CS</h3>
+          <p>Gain real-world computing skills and coding fundamentals.</p>
+          <a href="#admissions" class="learn-more">Learn More →</a>
+        </div>
+      </div>
+      <div class="program-card">
+        <iconify-icon icon="tabler:chart-bar" width="36" height="36" class="program-icon" />
+        <div class="program-meta">
+          <span class="program-tag">Commerce</span>
+          <h3>I.COM</h3>
+          <p>Enter the world of finance, economics, and commerce with core business education.</p>
+          <a href="#admissions" class="learn-more">Learn More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- FAQs Widget ******************* -->
+<!-- BI School (Grades 1–8) -->
+<section id="school" class="school-section">
+  <h2 class="section-title">Introducing BI School (Grades 1–8)</h2>
+  <p class="section-subtitle">Empowering young learners with strong academic foundations.</p>
+  <div class="programs-grid">
+    <div class="program-card">
+      <iconify-icon icon="tabler:abacus" width="36" height="36" class="program-icon" />
+      <div class="program-meta">
+        <h3>Grade 1 – Basic Learning</h3>
+        <p>Focus on reading, counting, creativity, and building confidence.</p>
+      </div>
+    </div>
+    <div class="program-card">
+      <iconify-icon icon="tabler:book" width="36" height="36" class="program-icon" />
+      <div class="program-meta">
+        <h3>Grade 2 – Building Blocks</h3>
+        <p>Structured subjects with moral education and soft skills.</p>
+      </div>
+    </div>
+    <div class="program-card">
+      <iconify-icon icon="tabler:microscope" width="36" height="36" class="program-icon" />
+      <div class="program-meta">
+        <h3>Grade 3 – Exploration Stage</h3>
+        <p>Science concepts, critical thinking, and projects.</p>
+      </div>
+    </div>
+    <div class="program-card">
+      <iconify-icon icon="tabler:zoom-canvas" width="36" height="36" class="program-icon" />
+      <div class="program-meta">
+        <h3>Grade 4 – Academic Confidence</h3>
+        <p>Comprehension, writing, and math fluency.</p>
+      </div>
+    </div>
+    <div class="program-card">
+      <iconify-icon icon="tabler:ruler-measure" width="36" height="36" class="program-icon" />
+      <div class="program-meta">
+        <h3>Grade 5 – Skill Sharpening</h3>
+        <p>Grammar, problem-solving, and exam prep.</p>
+      </div>
+    </div>
+    <div class="program-card">
+      <iconify-icon icon="tabler:layers-intersect" width="36" height="36" class="program-icon" />
+      <div class="program-meta">
+        <h3>Grade 6 – Transition Year</h3>
+        <p>Subject learning, participation, and test prep.</p>
+      </div>
+    </div>
+    <div class="program-card">
+      <iconify-icon icon="tabler:flask" width="36" height="36" class="program-icon" />
+      <div class="program-meta">
+        <h3>Grade 7 – Junior Foundation</h3>
+        <p>Deep dive into logic, science, and social studies.</p>
+      </div>
+    </div>
+    <div class="program-card">
+      <iconify-icon icon="tabler:school" width="36" height="36" class="program-icon" />
+      <div class="program-meta">
+        <h3>Grade 8 – Matric Readiness</h3>
+        <p>Bridge to board exam style with coaching.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
-    tagline="FAQs"
-    classes={{ container: 'max-w-6xl' }}
-    items={[
-      {
-        title: 'Why AstroWind?',
-        description:
-          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
-      },
-      {
-        title: 'What do I need to start?',
-        description:
-          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
-      },
-      {
-        title: 'How to install the Astro + Tailwind CSS template?',
-        description:
-          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
-      },
-      {
-        title: "What's something that you don't understand?",
-        description:
-          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
-      },
-      {
-        title: 'What is something that you would like to try again?',
-        description:
-          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
-      },
-      {
-        title: 'If you could only ask one question to each person you meet, what would that question be?',
-        description:
-          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
-      },
-    ]}
-  />
 
-  <!-- Stats Widget ****************** -->
+  <!-- Our Mission -->
+  <section class="mission-section">
+    <h2 class="section-title">Our Mission</h2>
+    <p class="section-subtitle">
+      We believe every student deserves access to education that inspires, challenges, and empowers them to grow into leaders, thinkers, and changemakers of tomorrow.
+    </p>
+  </section>
 
-  <Stats
-    stats={[
-      { title: 'Downloads', amount: '132K' },
-      { title: 'Stars', amount: '24.8K' },
-      { title: 'Forks', amount: '10.3K' },
-      { title: 'Users', amount: '48.4K' },
-    ]}
-  />
+  <!-- Admissions Steps -->
+  <section id="admissions" class="admissions-section">
+    <h2 class="section-title">Admission Steps</h2>
+    <p class="section-subtitle">Follow these simple steps to enroll at BI College Aspire Gamber.</p>
+    <div class="admission-steps">
+      <div class="admission-step">
+        <iconify-icon icon="tabler:book" width="56" height="56" class="step-icon"></iconify-icon>
+        <h3>Apply Online</h3>
+        <p>Submit your application easily from our online portal.</p>
+      </div>
+      <div class="admission-step">
+        <iconify-icon icon="tabler:users-group" width="56" height="56" class="step-icon"></iconify-icon>
+        <h3>Meet Our Advisors</h3>
+        <p>Get guidance to choose your best-fit program.</p>
+      </div>
+      <div class="admission-step">
+        <iconify-icon icon="tabler:clipboard-check" width="56" height="56" class="step-icon"></iconify-icon>
+        <h3>Confirm Enrollment</h3>
+        <p>Secure your seat and begin your educational journey.</p>
+      </div>
+    </div>
+  </section>
 
-  <!-- CallToAction Widget *********** -->
-
-  <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
-      },
-    ]}
-  >
-    <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
-    </Fragment>
-  </CallToAction>
 </Layout>
+
+
+<style>
+  .section-title {
+    font-size: 2.25rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-family: 'Georgia', serif;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: #334155;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .programs-section,
+  .mission-section,
+  .admissions-section {
+    padding: 4rem 1rem;
+  }
+
+  .programs-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    padding-top: 1rem;
+  }
+
+  .program-card {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: transform 0.2s ease;
+  }
+
+  .program-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .program-icon {
+    color: #1e40af;
+  }
+
+  .program-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    background: #fef9c3;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    color: #92400e;
+    font-weight: 600;
+  }
+
+  .learn-more {
+    font-weight: 600;
+    color: #1e40af;
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+
+  .learn-more:hover {
+    text-decoration: underline;
+  }
+
+  .admission-steps {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    margin-top: 2rem;
+  }
+
+  .admission-step {
+    background: #f9fafb;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: center;
+  }
+
+  .step-icon {
+    color: #facc15;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .programs-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -2,8 +2,13 @@
 import { SITE } from 'astrowind:config';
 ---
 
-<span
-  class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
->
-  🚀 {SITE?.name}
-</span>
+<a href="/" class="flex items-center no-underline">
+  <!-- Optional: replace with an icon or image if needed -->
+  <!-- <img src="/your-logo.svg" alt="Logo" class="h-8 w-auto" /> -->
+
+  <span class="self-center ml-2 text-2xl md:text-xl font-bold whitespace-nowrap">
+    <span class="text-blue-900">BI College</span>
+    <span class="text-yellow-500 italic underline decoration-wavy decoration-2 mx-1">Aspire</span>
+    <span class="text-blue-900">Gamber</span>
+  </span>
+</a>
