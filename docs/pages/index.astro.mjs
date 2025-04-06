@@ -1,0 +1,62 @@
+import { c as createComponent, r as renderTemplate, a as renderComponent, m as maybeRenderHead } from '../chunks/astro/server_DoRQTvF3.mjs';
+import 'kleur/colors';
+import { $ as $$PageLayout } from '../chunks/PageLayout_CHozfleT.mjs';
+/* empty css                                 */
+export { renderers } from '../renderers.mjs';
+
+var __freeze = Object.freeze;
+var __defProp = Object.defineProperty;
+var __template = (cooked, raw) => __freeze(__defProp(cooked, "raw", { value: __freeze(cooked.slice()) }));
+var _a;
+const $$Index = createComponent(($$result, $$props, $$slots) => {
+  return renderTemplate`${renderComponent($$result, "Layout", $$PageLayout, { "data-astro-cid-j7pv25f6": true }, { "default": ($$result2) => renderTemplate(_a || (_a = __template(["  ", `<div id="hero-intro" data-astro-cid-j7pv25f6> <h1 id="animated-heading" data-astro-cid-j7pv25f6></h1> </div>  <div id="hero-main" style="display: none;" data-astro-cid-j7pv25f6> <!-- Slim Banner --> <div class="announcement-strip" data-astro-cid-j7pv25f6> <div class="announcement-content centered" data-astro-cid-j7pv25f6> <span class="announcement-text" data-astro-cid-j7pv25f6>
+Enroll now at BI College Aspire Gamber \u2014 Scholarships, expert mentorship & early success.
+</span> <div class="announcement-buttons" data-astro-cid-j7pv25f6> <a href="#programs" class="banner-button" data-astro-cid-j7pv25f6>View Programs</a> <a href="https://aspirecolleges.edu.pk/online-admission/" class="banner-button" data-astro-cid-j7pv25f6>Apply Now</a> </div> </div> </div> <!-- Hero Video --> <div class="hero-video-wrapper" data-astro-cid-j7pv25f6> <video autoplay muted loop playsinline class="hero-video" data-astro-cid-j7pv25f6> <source src="/videos/welcome.mp4" type="video/mp4" data-astro-cid-j7pv25f6> </video> </div> </div> <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" client:load><\/script> <script client:load>
+    function initTypingHero() {
+      const text = "BI College Aspire Gamber: Start Your Journey";
+      const headingEl = document.getElementById("animated-heading");
+      const intro = document.getElementById("hero-intro");
+      const main = document.getElementById("hero-main");
+
+      if (!headingEl || !intro || !main) return;
+
+      let index = 0;
+      clearTimeout(window.typingTimeout);
+      headingEl.innerHTML = '';
+      intro.style.display = "flex";
+      main.style.display = "none";
+
+      function typeLetter() {
+        if (index < text.length) {
+          headingEl.innerHTML += text.charAt(index);
+          index++;
+          window.typingTimeout = setTimeout(typeLetter, 90);
+        } else {
+          setTimeout(() => {
+            intro.style.display = "none";
+            main.style.display = "block";
+          }, 1000);
+        }
+      }
+
+      typeLetter();
+    }
+
+    window.addEventListener("DOMContentLoaded", initTypingHero);
+    document.addEventListener("astro:after-swap", initTypingHero);
+  <\/script>   <section id="programs" class="programs-section" data-astro-cid-j7pv25f6> <h2 class="section-title" data-astro-cid-j7pv25f6>Our Intermediate Programs</h2> <p class="section-subtitle" data-astro-cid-j7pv25f6>Choose from our specialized Intermediate education programs to build your career.</p> <div class="programs-grid" data-astro-cid-j7pv25f6> <div class="program-card" data-astro-cid-j7pv25f6> `, ' <div class="program-meta" data-astro-cid-j7pv25f6> <span class="program-tag" data-astro-cid-j7pv25f6>Science</span> <h3 data-astro-cid-j7pv25f6>F.SC Pre-Medical</h3> <p data-astro-cid-j7pv25f6>Explore biology, chemistry, and physics for a career in health or medicine.</p> <a href="#admissions" class="learn-more" data-astro-cid-j7pv25f6>Learn More \u2192</a> </div> </div> <div class="program-card" data-astro-cid-j7pv25f6> ', ' <div class="program-meta" data-astro-cid-j7pv25f6> <span class="program-tag" data-astro-cid-j7pv25f6>Engineering</span> <h3 data-astro-cid-j7pv25f6>F.SC Pre-Engineering</h3> <p data-astro-cid-j7pv25f6>Prepare for university-level engineering with math, physics, and critical thinking.</p> <a href="#admissions" class="learn-more" data-astro-cid-j7pv25f6>Learn More \u2192</a> </div> </div> <div class="program-card" data-astro-cid-j7pv25f6> ', ' <div class="program-meta" data-astro-cid-j7pv25f6> <span class="program-tag" data-astro-cid-j7pv25f6>Arts</span> <h3 data-astro-cid-j7pv25f6>F.A</h3> <p data-astro-cid-j7pv25f6>A creative and thoughtful path through arts, literature, and media studies.</p> <a href="#admissions" class="learn-more" data-astro-cid-j7pv25f6>Learn More \u2192</a> </div> </div> <div class="program-card" data-astro-cid-j7pv25f6> ', ' <div class="program-meta" data-astro-cid-j7pv25f6> <span class="program-tag" data-astro-cid-j7pv25f6>Technology</span> <h3 data-astro-cid-j7pv25f6>I.CS</h3> <p data-astro-cid-j7pv25f6>Gain real-world computing skills and coding fundamentals.</p> <a href="#admissions" class="learn-more" data-astro-cid-j7pv25f6>Learn More \u2192</a> </div> </div> <div class="program-card" data-astro-cid-j7pv25f6> ', ' <div class="program-meta" data-astro-cid-j7pv25f6> <span class="program-tag" data-astro-cid-j7pv25f6>Commerce</span> <h3 data-astro-cid-j7pv25f6>I.COM</h3> <p data-astro-cid-j7pv25f6>Enter the world of finance, economics, and commerce with core business education.</p> <a href="#admissions" class="learn-more" data-astro-cid-j7pv25f6>Learn More \u2192</a> </div> </div> </div> </section>  <section id="school" class="school-section" data-astro-cid-j7pv25f6> <h2 class="section-title" data-astro-cid-j7pv25f6>Introducing BI School (Grades 1\u20138)</h2> <p class="section-subtitle" data-astro-cid-j7pv25f6>Empowering young learners with strong academic foundations.</p> <div class="programs-grid" data-astro-cid-j7pv25f6> <div class="program-card" data-astro-cid-j7pv25f6> ', ' <div class="program-meta" data-astro-cid-j7pv25f6> <h3 data-astro-cid-j7pv25f6>Grade 1 \u2013 Basic Learning</h3> <p data-astro-cid-j7pv25f6>Focus on reading, counting, creativity, and building confidence.</p> </div> </div> <div class="program-card" data-astro-cid-j7pv25f6> ', ' <div class="program-meta" data-astro-cid-j7pv25f6> <h3 data-astro-cid-j7pv25f6>Grade 2 \u2013 Building Blocks</h3> <p data-astro-cid-j7pv25f6>Structured subjects with moral education and soft skills.</p> </div> </div> <div class="program-card" data-astro-cid-j7pv25f6> ', ' <div class="program-meta" data-astro-cid-j7pv25f6> <h3 data-astro-cid-j7pv25f6>Grade 3 \u2013 Exploration Stage</h3> <p data-astro-cid-j7pv25f6>Science concepts, critical thinking, and projects.</p> </div> </div> <div class="program-card" data-astro-cid-j7pv25f6> ', ' <div class="program-meta" data-astro-cid-j7pv25f6> <h3 data-astro-cid-j7pv25f6>Grade 4 \u2013 Academic Confidence</h3> <p data-astro-cid-j7pv25f6>Comprehension, writing, and math fluency.</p> </div> </div> <div class="program-card" data-astro-cid-j7pv25f6> ', ' <div class="program-meta" data-astro-cid-j7pv25f6> <h3 data-astro-cid-j7pv25f6>Grade 5 \u2013 Skill Sharpening</h3> <p data-astro-cid-j7pv25f6>Grammar, problem-solving, and exam prep.</p> </div> </div> <div class="program-card" data-astro-cid-j7pv25f6> ', ' <div class="program-meta" data-astro-cid-j7pv25f6> <h3 data-astro-cid-j7pv25f6>Grade 6 \u2013 Transition Year</h3> <p data-astro-cid-j7pv25f6>Subject learning, participation, and test prep.</p> </div> </div> <div class="program-card" data-astro-cid-j7pv25f6> ', ' <div class="program-meta" data-astro-cid-j7pv25f6> <h3 data-astro-cid-j7pv25f6>Grade 7 \u2013 Junior Foundation</h3> <p data-astro-cid-j7pv25f6>Deep dive into logic, science, and social studies.</p> </div> </div> <div class="program-card" data-astro-cid-j7pv25f6> ', ' <div class="program-meta" data-astro-cid-j7pv25f6> <h3 data-astro-cid-j7pv25f6>Grade 8 \u2013 Matric Readiness</h3> <p data-astro-cid-j7pv25f6>Bridge to board exam style with coaching.</p> </div> </div> </div> </section>  <section class="mission-section" data-astro-cid-j7pv25f6> <h2 class="section-title" data-astro-cid-j7pv25f6>Our Mission</h2> <p class="section-subtitle" data-astro-cid-j7pv25f6>\nWe believe every student deserves access to education that inspires, challenges, and empowers them to grow into leaders, thinkers, and changemakers of tomorrow.\n</p> </section>  <section id="admissions" class="admissions-section" data-astro-cid-j7pv25f6> <h2 class="section-title" data-astro-cid-j7pv25f6>Admission Steps</h2> <p class="section-subtitle" data-astro-cid-j7pv25f6>Follow these simple steps to enroll at BI College Aspire Gamber.</p> <div class="admission-steps" data-astro-cid-j7pv25f6> <div class="admission-step" data-astro-cid-j7pv25f6> ', ' <h3 data-astro-cid-j7pv25f6>Apply Online</h3> <p data-astro-cid-j7pv25f6>Submit your application easily from our online portal.</p> </div> <div class="admission-step" data-astro-cid-j7pv25f6> ', ' <h3 data-astro-cid-j7pv25f6>Meet Our Advisors</h3> <p data-astro-cid-j7pv25f6>Get guidance to choose your best-fit program.</p> </div> <div class="admission-step" data-astro-cid-j7pv25f6> ', " <h3 data-astro-cid-j7pv25f6>Confirm Enrollment</h3> <p data-astro-cid-j7pv25f6>Secure your seat and begin your educational journey.</p> </div> </div> </section> "])), maybeRenderHead(), renderComponent($$result2, "iconify-icon", "iconify-icon", { "icon": "tabler:heartbeat", "width": "36", "height": "36", "class": "program-icon", "data-astro-cid-j7pv25f6": true }), renderComponent($$result2, "iconify-icon", "iconify-icon", { "icon": "tabler:tools", "width": "36", "height": "36", "class": "program-icon", "data-astro-cid-j7pv25f6": true }), renderComponent($$result2, "iconify-icon", "iconify-icon", { "icon": "tabler:palette", "width": "36", "height": "36", "class": "program-icon", "data-astro-cid-j7pv25f6": true }), renderComponent($$result2, "iconify-icon", "iconify-icon", { "icon": "tabler:device-laptop", "width": "36", "height": "36", "class": "program-icon", "data-astro-cid-j7pv25f6": true }), renderComponent($$result2, "iconify-icon", "iconify-icon", { "icon": "tabler:chart-bar", "width": "36", "height": "36", "class": "program-icon", "data-astro-cid-j7pv25f6": true }), renderComponent($$result2, "iconify-icon", "iconify-icon", { "icon": "tabler:abacus", "width": "36", "height": "36", "class": "program-icon", "data-astro-cid-j7pv25f6": true }), renderComponent($$result2, "iconify-icon", "iconify-icon", { "icon": "tabler:book", "width": "36", "height": "36", "class": "program-icon", "data-astro-cid-j7pv25f6": true }), renderComponent($$result2, "iconify-icon", "iconify-icon", { "icon": "tabler:microscope", "width": "36", "height": "36", "class": "program-icon", "data-astro-cid-j7pv25f6": true }), renderComponent($$result2, "iconify-icon", "iconify-icon", { "icon": "tabler:zoom-canvas", "width": "36", "height": "36", "class": "program-icon", "data-astro-cid-j7pv25f6": true }), renderComponent($$result2, "iconify-icon", "iconify-icon", { "icon": "tabler:ruler-measure", "width": "36", "height": "36", "class": "program-icon", "data-astro-cid-j7pv25f6": true }), renderComponent($$result2, "iconify-icon", "iconify-icon", { "icon": "tabler:layers-intersect", "width": "36", "height": "36", "class": "program-icon", "data-astro-cid-j7pv25f6": true }), renderComponent($$result2, "iconify-icon", "iconify-icon", { "icon": "tabler:flask", "width": "36", "height": "36", "class": "program-icon", "data-astro-cid-j7pv25f6": true }), renderComponent($$result2, "iconify-icon", "iconify-icon", { "icon": "tabler:school", "width": "36", "height": "36", "class": "program-icon", "data-astro-cid-j7pv25f6": true }), renderComponent($$result2, "iconify-icon", "iconify-icon", { "icon": "tabler:book", "width": "56", "height": "56", "class": "step-icon", "data-astro-cid-j7pv25f6": true }), renderComponent($$result2, "iconify-icon", "iconify-icon", { "icon": "tabler:users-group", "width": "56", "height": "56", "class": "step-icon", "data-astro-cid-j7pv25f6": true }), renderComponent($$result2, "iconify-icon", "iconify-icon", { "icon": "tabler:clipboard-check", "width": "56", "height": "56", "class": "step-icon", "data-astro-cid-j7pv25f6": true })) })} `;
+}, "/workspaces/astrowind/src/pages/index.astro", undefined);
+
+const $$file = "/workspaces/astrowind/src/pages/index.astro";
+const $$url = "";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$Index,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };
