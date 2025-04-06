@@ -1,9 +1,9 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { defineConfig } from 'astro/config';
-import dotenv from 'dotenv';  // 🔥 Import dotenv
+import dotenv from 'dotenv';
 
-dotenv.config();  // 🔥 Load .env variables
+dotenv.config();
 
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
@@ -13,12 +13,22 @@ import icon from 'astro-icon';
 import compress from 'astro-compress';
 
 import astrowind from './vendor/integration';
-import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter';
+import {
+  readingTimeRemarkPlugin,
+  responsiveTablesRehypePlugin,
+  lazyImagesRehypePlugin,
+} from './src/utils/frontmatter';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   output: 'static',
+
+  base: '/aspire-website/', // ✅ Matches your GitHub repo name
+
+  build: {
+    outDir: './docs', // ✅ Correct: must be inside `build`
+  },
 
   integrations: [
     tailwind({
@@ -42,7 +52,6 @@ export default defineConfig({
         ],
       },
     }),
-
     compress({
       CSS: true,
       HTML: {
@@ -55,7 +64,6 @@ export default defineConfig({
       SVG: false,
       Logger: 1,
     }),
-
     astrowind({
       config: './src/config.yaml',
     }),
