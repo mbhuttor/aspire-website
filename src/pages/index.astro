@@ -5,6 +5,10 @@ title: "BI College Aspire Gamber — Excellence in Intermediate Education";
 
 <Layout>
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background: white;
       color: black;
@@ -37,6 +41,10 @@ title: "BI College Aspire Gamber — Excellence in Intermediate Education";
       text-decoration: none;
     }
 
+    .banner-button:hover {
+      background: #b91c1c;
+    }
+
     .learn-more {
       font-weight: 600;
       color: #1e40af;
@@ -46,20 +54,6 @@ title: "BI College Aspire Gamber — Excellence in Intermediate Education";
 
     .learn-more:hover {
       text-decoration: underline;
-    }
-
-    .program-icon {
-      color: #2563eb;
-    }
-
-    .program-tag {
-      display: inline-block;
-      font-size: 0.75rem;
-      background: #fef9c3;
-      padding: 0.25rem 0.75rem;
-      border-radius: 9999px;
-      color: #92400e;
-      font-weight: 600;
     }
 
     .programs-grid {
@@ -78,6 +72,7 @@ title: "BI College Aspire Gamber — Excellence in Intermediate Education";
       display: flex;
       flex-direction: column;
       gap: 0.75rem;
+      text-align: center;
     }
 
     .admission-steps {
@@ -148,9 +143,35 @@ title: "BI College Aspire Gamber — Excellence in Intermediate Education";
     </style>
   </noscript>
 
-  <!-- (rest of your code stays the same) -->
+  <!-- PROGRAMS SECTION -->
+  <section id="programs" style="padding: 4rem 1rem; background-color: #ffffff;">
+    <h2 style="text-align: center; font-size: 2.25rem;">Our Programs</h2>
+    <p class="section-subtitle">We offer pre-medical, pre-engineering, computer science, commerce, and arts streams for intermediate students.</p>
+    <div class="programs-grid">
+      <div class="program-card">
+        <h3>Pre-Medical</h3>
+        <p>Ideal for students aiming for medical and life sciences careers.</p>
+      </div>
+      <div class="program-card">
+        <h3>Pre-Engineering</h3>
+        <p>Builds a strong foundation in physics, chemistry, and mathematics.</p>
+      </div>
+      <div class="program-card">
+        <h3>ICS (Computer Science)</h3>
+        <p>Focuses on computing, logic building, and modern programming concepts.</p>
+      </div>
+      <div class="program-card">
+        <h3>I.Com (Commerce)</h3>
+        <p>Designed for students interested in business, accounting, and finance.</p>
+      </div>
+      <div class="program-card">
+        <h3>FA (Arts)</h3>
+        <p>Offers flexibility with subject choices in humanities and social sciences.</p>
+      </div>
+    </div>
+  </section>
 
-  <!-- ADMISSIONS section: updated ID -->
+  <!-- ADMISSION STEPS -->
   <section id="admission-steps" style="padding: 4rem 1rem; background-color: #f9fafb;">
     <h2 style="text-align: center; font-size: 2.25rem;">Admission Steps</h2>
     <p class="section-subtitle">Follow these simple steps to enroll at BI College Aspire Gamber.</p>
