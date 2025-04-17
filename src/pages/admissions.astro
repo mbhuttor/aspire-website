@@ -1,113 +1,239 @@
 ---
-title: 'Privacy Policy'
-layout: '~/layouts/MarkdownLayout.astro'
+import Layout from '~/layouts/PageLayout.astro';
+title: "Admissions - Aspire College Gamber";
 ---
 
-_Last updated_: April 06, 2025
+<Layout>
+  <!-- Background Floating Icons -->
+  <div class="background-icons">
+    <iconify-icon icon="mdi:school" width="60" style="top: 10%; left: 15%; color: #3b82f6;"></iconify-icon>
+    <iconify-icon icon="mdi:lightbulb-on-outline" width="50" style="top: 35%; right: 10%; color: #facc15;"></iconify-icon>
+    <iconify-icon icon="mdi:book-education" width="50" style="bottom: 25%; left: 20%; color: #8b5cf6;"></iconify-icon>
+    <iconify-icon icon="mdi:earth" width="70" style="bottom: 15%; right: 18%; color: #22d3ee;"></iconify-icon>
+    <iconify-icon icon="mdi:calculator" width="50" style="top: 60%; left: 50%; color: #f87171;"></iconify-icon>
+  </div>
 
-This Privacy Policy describes our policies and procedures on the collection, use, and disclosure of your information when you use our services and tells you about your privacy rights and how the law protects you.
+  <section class="admission-grid">
+    <!-- Countdown + Apply -->
+    <div class="grid-box grid-top-left">
+      <h1 class="main-heading">Apply to Aspire Gamber</h1>
+      <p class="hero-sub">Admissions Close In</p>
+      <div class="countdown-wrapper">
+        <div class="countdown-box"><span id="days">--</span><label>Days</label></div>
+        <div class="countdown-box"><span id="hours">--</span><label>Hours</label></div>
+        <div class="countdown-box"><span id="minutes">--</span><label>Mins</label></div>
+        <div class="countdown-box"><span id="seconds">--</span><label>Sec</label></div>
+      </div>
+      <a href="https://aspirecolleges.edu.pk/online-admission/" class="main-button">Apply Now</a>
+    </div>
 
-We use your personal data to provide and improve the service. By using the service, you agree to the collection and use of information in accordance with this Privacy Policy.
+    <!-- Why Apply -->
+    <div class="grid-box grid-top-right">
+      <h2>Why Apply to Aspire Gamber?</h2>
+      <ul class="apply-list">
+        <li><iconify-icon icon="mdi:school-outline"></iconify-icon> Top-notch faculty & student support</li>
+        <li><iconify-icon icon="mdi:book-check-outline"></iconify-icon> Inclusive, barrier-free learning</li>
+        <li><iconify-icon icon="mdi:cash-multiple"></iconify-icon> Scholarships and affordable fees</li>
+        <li><iconify-icon icon="mdi:rocket-launch-outline"></iconify-icon> Empowering education for bright futures</li>
+      </ul>
+    </div>
 
----
+    <!-- Testimonials -->
+    <div class="grid-box grid-bottom-left">
+      <h2>What Students Say</h2>
+      <div class="cloud-container">
+        <div class="cloud" id="testimonial-cloud">
+          <p id="testimonial-text">"Aspire Gamber changed my life—supportive teachers and real growth!"</p>
+        </div>
+      </div>
+    </div>
 
-## Interpretation and Definitions
+    <!-- FAQs -->
+    <div class="grid-box grid-bottom-right">
+      <h2>FAQs</h2>
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question"><iconify-icon icon="mdi:account-question"></iconify-icon> Who can apply?</div>
+        <div class="faq-answer">Anyone completing Matric or equivalent. We welcome diverse learners!</div>
+      </div>
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question"><iconify-icon icon="mdi:clock-outline"></iconify-icon> How long does it take?</div>
+        <div class="faq-answer">You'll hear back within 3–5 business days.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question"><iconify-icon icon="mdi:school"></iconify-icon> Are scholarships available?</div>
+        <div class="faq-answer">Yes! Need- and merit-based scholarships are offered.</div>
+      </div>
+    </div>
+  </section>
 
-### Definitions
+  <!-- Scripts -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" client:load></script>
+  <script client:load>
+    const deadline = new Date(); deadline.setDate(deadline.getDate() + 60);
+    const countdown = () => {
+      const now = new Date().getTime();
+      const diff = deadline - now;
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((diff % (1000 * 60)) / 1000);
+      document.getElementById("days").textContent = d;
+      document.getElementById("hours").textContent = h;
+      document.getElementById("minutes").textContent = m;
+      document.getElementById("seconds").textContent = s;
+    };
+    setInterval(countdown, 1000); countdown();
 
-- **Company** (referred to as "Aspire College Gamber", "we", "us", or "our") refers to Aspire College Gamber, located at *Gulberg Citi College Building, Q82G+P45, Adda Gamber, Pakistan*.
-- **Personal Data** means any information relating to an identified or identifiable individual.
-- **Service** refers to the website accessible at [https://aspirecolleges.edu.pk](https://aspirecolleges.edu.pk).
-- **Device** means any device that can access the service such as a computer, mobile phone, or tablet.
-- **Cookies** are small files placed on your device that track information on your browsing activity.
-- **Usage Data** refers to data automatically collected while using the service.
-- **You** means the individual accessing the service, or any legal entity on behalf of which such individual is accessing or using the service.
+    const testimonials = [
+      `"Aspire Gamber changed my life—supportive teachers and real growth!"`,
+      `"I found amazing mentors and made lifelong friends here."`,
+      `"The academics and environment helped me grow confidently."`
+    ];
+    let current = 0;
+    setInterval(() => {
+      const text = document.getElementById("testimonial-text");
+      current = (current + 1) % testimonials.length;
+      text.textContent = testimonials[current];
+    }, 5000);
 
----
+    function toggleFAQ(el) {
+      el.classList.toggle("open");
+    }
+  </script>
 
-## Types of Data Collected
+  <!-- Styles -->
+  <style>
+    body {
+      background-color: #0a1628;
+      color: #f8fafc;
+      font-family: 'Georgia', serif;
+    }
 
-### Personal Data
+    .background-icons iconify-icon {
+      position: absolute;
+      opacity: 0.05;
+      pointer-events: none;
+      z-index: 0;
+    }
 
-While using our service, we may ask you to provide certain personally identifiable information, including but not limited to:
+    .admission-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, auto);
+      gap: 2.5rem;
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
 
-- Full Name  
-- Email Address  
-- Phone Number  
-- Grade of interest  
-- CNIC/B-Form (for enrollment purposes)  
-- Any other data you voluntarily submit through our admission forms
+    .grid-box {
+      padding: 1.5rem;
+      border-radius: 12px;
+    }
 
-### Usage Data
+    .grid-top-left h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: #facc15;
+    }
 
-We may also collect information such as your device’s IP address, browser type, browser version, pages visited, and time spent on pages.
+    .hero-sub {
+      color: #facc15;
+      margin-bottom: 1rem;
+    }
 
----
+    .countdown-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
 
-## Use of Your Personal Data
+    .countdown-box {
+      background: #fff;
+      color: #111;
+      border-radius: 8px;
+      padding: 0.75rem;
+      min-width: 80px;
+      text-align: center;
+    }
 
-We use your data to:
+    .main-button {
+      background: #dc2626;
+      color: white;
+      font-weight: bold;
+      padding: 0.6rem 1.2rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      display: inline-block;
+    }
 
-- Provide and maintain our services  
-- Contact you regarding your inquiries or admissions  
-- Send you updates and promotional materials (only if you opt in)  
-- Improve the quality of our offerings  
-- Comply with legal obligations  
+    .grid-top-right h2,
+    .grid-bottom-left h2,
+    .grid-bottom-right h2 {
+      color: #facc15;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
 
-We **do not** sell your data to third parties.
+    .apply-list {
+      list-style: none;
+      padding: 0;
+    }
 
----
+    .apply-list li {
+      margin-bottom: 0.75rem;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
 
-## Cookies and Tracking
+    .cloud-container {
+      display: flex;
+      justify-content: center;
+    }
 
-We use cookies to improve your experience on our site. You can instruct your browser to refuse cookies or indicate when one is being sent.
+    .cloud {
+      background: #fff;
+      color: #111;
+      padding: 1.25rem 2rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      box-shadow: 0 6px 10px rgba(255,255,255,0.05);
+      text-align: center;
+      max-width: 480px;
+    }
 
----
+    .faq-item {
+      border-bottom: 1px solid #444;
+      padding: 0.75rem 0;
+      cursor: pointer;
+    }
 
-## Data Retention
+    .faq-question {
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
 
-We retain your data only as long as necessary for purposes stated above or as required by law.
+    .faq-answer {
+      display: none;
+      margin-top: 0.5rem;
+      color: #facc15;
+    }
 
----
+    .faq-item.open .faq-answer {
+      display: block;
+    }
 
-## Security
-
-We implement standard security protocols to protect your data. However, please be aware no method of transmission over the internet is 100% secure.
-
----
-
-## Your Rights
-
-You have the right to:
-
-- Access the personal data we hold about you  
-- Request correction or deletion of your data  
-- Withdraw consent at any time  
-
-To exercise these rights, email us at: **principal.gamber@aspirecollege.edu.pk**
-
----
-
-## Children's Privacy
-
-Our website is not intended for children under 13. We do not knowingly collect information from children under this age without parental consent.
-
----
-
-## Changes to This Policy
-
-We may update this Privacy Policy from time to time. The latest version will always be available on this page.
-
-_Last updated: April 06, 2025_
-
----
-
-## Contact Us
-
-If you have any questions about this Privacy Policy, please contact:
-
-**Aspire College Gamber**  
-📍 Gulberg Citi College Building, Q82G+P45, Adda Gamber, Pakistan  
-📧 principal.gamber@aspirecollege.edu.pk  
-📞 +92 347 6538634  
-🌐 [https://aspirecolleges.edu.pk](https://aspirecolleges.edu.pk)
+    @media (max-width: 768px) {
+      .admission-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</Layout>

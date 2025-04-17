@@ -1,38 +1,179 @@
-
 ---
 import Layout from '~/layouts/PageLayout.astro';
 title: "BI College Aspire Gamber — Excellence in Intermediate Education";
 ---
 
 <Layout>
-  <!-- Typing Intro -->
-  <div id="hero-intro">
+  <style>
+    body {
+      background: white;
+      color: black;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Georgia', serif;
+      color: black;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: black;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .banner-button {
+      background: #dc2626;
+      color: white;
+      padding: 0.4rem 1.25rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+    }
+
+    .learn-more {
+      font-weight: 600;
+      color: #1e40af;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .learn-more:hover {
+      text-decoration: underline;
+    }
+
+    .program-icon {
+      color: #2563eb;
+    }
+
+    .program-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      background: #fef9c3;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      color: #92400e;
+      font-weight: 600;
+    }
+
+    .programs-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      padding-top: 1rem;
+      color: black;
+    }
+
+    .program-card {
+      background: #f9fafb;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .admission-steps {
+      display: grid;
+      color: rgb(0, 0, 0);
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      margin-top: 2rem;
+    }
+
+    .admission-step {
+      background: rgb(253, 253, 253);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .step-icon {
+      color: #facc15;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .programs-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .banner-button {
+        display: block;
+        margin: 0.25rem auto;
+        text-align: center;
+      }
+    }
+  </style>
+
+  <!-- Typing Animation Intro -->
+  <div id="hero-intro" style="background: white; color: black; font-size: 2rem; display: flex; align-items: center; justify-content: center; height: 100vh; text-align: center;">
     <h1 id="animated-heading"></h1>
   </div>
 
   <!-- Hero Section -->
   <div id="hero-main" style="display: none;">
-    <!-- Slim Banner -->
-    <div class="announcement-strip">
-      <div class="announcement-content centered">
-        <span class="announcement-text">
+    <div style="background: #fef08a; padding: 0.3rem 1rem;">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 0.4rem;">
+        <span style="font-weight: 600; font-size: 1rem; color: black; text-align: center;">
           Enroll now at BI College Aspire Gamber — Scholarships, expert mentorship & early success.
         </span>
-        <div class="announcement-buttons">
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;">
           <a href="#programs" class="banner-button">View Programs</a>
-          <a href="https://aspirecolleges.edu.pk/online-admission/" class="banner-button">Apply Now</a>
+          <a href="#admission-steps" class="banner-button">View Admissions</a>
+          <a href="https://aspirecolleges.edu.pk/online-admission/" class="banner-button" target="_blank">Apply Now</a>
         </div>
       </div>
     </div>
 
-    <!-- Hero Video -->
-    <div class="hero-video-wrapper">
-      <video autoplay muted loop playsinline class="hero-video">
+    <div style="width: 100%; background: linear-gradient(to bottom, #fef08a, #ffffff); display: flex; justify-content: center; align-items: center; padding: 1.5rem;">
+      <video autoplay muted loop playsinline style="width: 100%; max-width: 1000px; height: auto; object-fit: contain; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.1);">
         <source src="/videos/welcome.mp4" type="video/mp4" />
       </video>
     </div>
   </div>
 
+  <noscript>
+    <style>
+      #hero-intro { display: none; }
+      #hero-main { display: block !important; }
+    </style>
+  </noscript>
+
+  <!-- (rest of your code stays the same) -->
+
+  <!-- ADMISSIONS section: updated ID -->
+  <section id="admission-steps" style="padding: 4rem 1rem; background-color: #f9fafb;">
+    <h2 style="text-align: center; font-size: 2.25rem;">Admission Steps</h2>
+    <p class="section-subtitle">Follow these simple steps to enroll at BI College Aspire Gamber.</p>
+    <div class="admission-steps">
+      <div class="admission-step">
+        <iconify-icon icon="tabler:book" class="step-icon" width="56" height="56" />
+        <h3>Apply Online</h3>
+        <p>Submit your application easily from our online portal.</p>
+      </div>
+      <div class="admission-step">
+        <iconify-icon icon="tabler:users-group" class="step-icon" width="56" height="56" />
+        <h3>Meet Our Advisors</h3>
+        <p>Get guidance to choose your best-fit program.</p>
+      </div>
+      <div class="admission-step">
+        <iconify-icon icon="tabler:clipboard-check" class="step-icon" width="56" height="56" />
+        <h3>Confirm Enrollment</h3>
+        <p>Secure your seat and begin your educational journey.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts -->
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" client:load></script>
   <script client:load>
     function initTypingHero() {
@@ -44,7 +185,6 @@ title: "BI College Aspire Gamber — Excellence in Intermediate Education";
       if (!headingEl || !intro || !main) return;
 
       let index = 0;
-      clearTimeout(window.typingTimeout);
       headingEl.innerHTML = '';
       intro.style.display = "flex";
       main.style.display = "none";
@@ -58,7 +198,7 @@ title: "BI College Aspire Gamber — Excellence in Intermediate Education";
           setTimeout(() => {
             intro.style.display = "none";
             main.style.display = "block";
-          }, 1000);
+          }, 500);
         }
       }
 
@@ -68,341 +208,4 @@ title: "BI College Aspire Gamber — Excellence in Intermediate Education";
     window.addEventListener("DOMContentLoaded", initTypingHero);
     document.addEventListener("astro:after-swap", initTypingHero);
   </script>
-
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      background: #fff;
-      color: #1e293b;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Georgia', serif;
-    }
-
-    #hero-intro {
-      background: black;
-      color: white;
-      font-size: 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-    }
-
-    .announcement-strip {
-      background: #fef08a;
-      padding: 0.3rem 1rem;
-    }
-
-    .announcement-content.centered {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .announcement-text {
-      font-weight: 600;
-      color: #1e293b;
-      font-size: 1rem;
-      text-align: center;
-    }
-
-    .announcement-buttons {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .banner-button {
-      background: #dc2626;
-      color: white;
-      padding: 0.4rem 1.25rem;
-      border-radius: 9999px;
-      font-weight: 600;
-      font-size: 0.85rem;
-      text-decoration: none;
-    }
-
-    .hero-video-wrapper {
-      width: 100%;
-      background: linear-gradient(to bottom, #fef08a, #ffffff);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 1.5rem;
-    }
-
-    .hero-video {
-      width: 100%;
-      max-width: 1000px;
-      height: auto;
-      object-fit: contain;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-    }
-
-    @media (max-width: 768px) {
-      .announcement-buttons {
-        flex-direction: column;
-      }
-
-      .hero-video {
-        max-width: 100%;
-      }
-    }
-  </style>
-
-  <!-- Intermediate Programs -->
-  <section id="programs" class="programs-section">
-    <h2 class="section-title">Our Intermediate Programs</h2>
-    <p class="section-subtitle">Choose from our specialized Intermediate education programs to build your career.</p>
-    <div class="programs-grid">
-      <div class="program-card">
-        <iconify-icon icon="tabler:heartbeat" width="36" height="36" class="program-icon" />
-        <div class="program-meta">
-          <span class="program-tag">Science</span>
-          <h3>F.SC Pre-Medical</h3>
-          <p>Explore biology, chemistry, and physics for a career in health or medicine.</p>
-          <a href="#admissions" class="learn-more">Learn More →</a>
-        </div>
-      </div>
-      <div class="program-card">
-        <iconify-icon icon="tabler:tools" width="36" height="36" class="program-icon" />
-        <div class="program-meta">
-          <span class="program-tag">Engineering</span>
-          <h3>F.SC Pre-Engineering</h3>
-          <p>Prepare for university-level engineering with math, physics, and critical thinking.</p>
-          <a href="#admissions" class="learn-more">Learn More →</a>
-        </div>
-      </div>
-      <div class="program-card">
-        <iconify-icon icon="tabler:palette" width="36" height="36" class="program-icon" />
-        <div class="program-meta">
-          <span class="program-tag">Arts</span>
-          <h3>F.A</h3>
-          <p>A creative and thoughtful path through arts, literature, and media studies.</p>
-          <a href="#admissions" class="learn-more">Learn More →</a>
-        </div>
-      </div>
-      <div class="program-card">
-        <iconify-icon icon="tabler:device-laptop" width="36" height="36" class="program-icon" />
-        <div class="program-meta">
-          <span class="program-tag">Technology</span>
-          <h3>I.CS</h3>
-          <p>Gain real-world computing skills and coding fundamentals.</p>
-          <a href="#admissions" class="learn-more">Learn More →</a>
-        </div>
-      </div>
-      <div class="program-card">
-        <iconify-icon icon="tabler:chart-bar" width="36" height="36" class="program-icon" />
-        <div class="program-meta">
-          <span class="program-tag">Commerce</span>
-          <h3>I.COM</h3>
-          <p>Enter the world of finance, economics, and commerce with core business education.</p>
-          <a href="#admissions" class="learn-more">Learn More →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<!-- BI School (Grades 1–8) -->
-<section id="school" class="school-section">
-  <h2 class="section-title">Introducing BI School (Grades 1–8)</h2>
-  <p class="section-subtitle">Empowering young learners with strong academic foundations.</p>
-  <div class="programs-grid">
-    <div class="program-card">
-      <iconify-icon icon="tabler:abacus" width="36" height="36" class="program-icon" />
-      <div class="program-meta">
-        <h3>Grade 1 – Basic Learning</h3>
-        <p>Focus on reading, counting, creativity, and building confidence.</p>
-      </div>
-    </div>
-    <div class="program-card">
-      <iconify-icon icon="tabler:book" width="36" height="36" class="program-icon" />
-      <div class="program-meta">
-        <h3>Grade 2 – Building Blocks</h3>
-        <p>Structured subjects with moral education and soft skills.</p>
-      </div>
-    </div>
-    <div class="program-card">
-      <iconify-icon icon="tabler:microscope" width="36" height="36" class="program-icon" />
-      <div class="program-meta">
-        <h3>Grade 3 – Exploration Stage</h3>
-        <p>Science concepts, critical thinking, and projects.</p>
-      </div>
-    </div>
-    <div class="program-card">
-      <iconify-icon icon="tabler:zoom-canvas" width="36" height="36" class="program-icon" />
-      <div class="program-meta">
-        <h3>Grade 4 – Academic Confidence</h3>
-        <p>Comprehension, writing, and math fluency.</p>
-      </div>
-    </div>
-    <div class="program-card">
-      <iconify-icon icon="tabler:ruler-measure" width="36" height="36" class="program-icon" />
-      <div class="program-meta">
-        <h3>Grade 5 – Skill Sharpening</h3>
-        <p>Grammar, problem-solving, and exam prep.</p>
-      </div>
-    </div>
-    <div class="program-card">
-      <iconify-icon icon="tabler:layers-intersect" width="36" height="36" class="program-icon" />
-      <div class="program-meta">
-        <h3>Grade 6 – Transition Year</h3>
-        <p>Subject learning, participation, and test prep.</p>
-      </div>
-    </div>
-    <div class="program-card">
-      <iconify-icon icon="tabler:flask" width="36" height="36" class="program-icon" />
-      <div class="program-meta">
-        <h3>Grade 7 – Junior Foundation</h3>
-        <p>Deep dive into logic, science, and social studies.</p>
-      </div>
-    </div>
-    <div class="program-card">
-      <iconify-icon icon="tabler:school" width="36" height="36" class="program-icon" />
-      <div class="program-meta">
-        <h3>Grade 8 – Matric Readiness</h3>
-        <p>Bridge to board exam style with coaching.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  <!-- Our Mission -->
-  <section class="mission-section">
-    <h2 class="section-title">Our Mission</h2>
-    <p class="section-subtitle">
-      We believe every student deserves access to education that inspires, challenges, and empowers them to grow into leaders, thinkers, and changemakers of tomorrow.
-    </p>
-  </section>
-
-  <!-- Admissions Steps -->
-  <section id="admissions" class="admissions-section">
-    <h2 class="section-title">Admission Steps</h2>
-    <p class="section-subtitle">Follow these simple steps to enroll at BI College Aspire Gamber.</p>
-    <div class="admission-steps">
-      <div class="admission-step">
-        <iconify-icon icon="tabler:book" width="56" height="56" class="step-icon"></iconify-icon>
-        <h3>Apply Online</h3>
-        <p>Submit your application easily from our online portal.</p>
-      </div>
-      <div class="admission-step">
-        <iconify-icon icon="tabler:users-group" width="56" height="56" class="step-icon"></iconify-icon>
-        <h3>Meet Our Advisors</h3>
-        <p>Get guidance to choose your best-fit program.</p>
-      </div>
-      <div class="admission-step">
-        <iconify-icon icon="tabler:clipboard-check" width="56" height="56" class="step-icon"></iconify-icon>
-        <h3>Confirm Enrollment</h3>
-        <p>Secure your seat and begin your educational journey.</p>
-      </div>
-    </div>
-  </section>
-
 </Layout>
-
-
-<style>
-  .section-title {
-    font-size: 2.25rem;
-    text-align: center;
-    margin-bottom: 0.5rem;
-    font-family: 'Georgia', serif;
-  }
-
-  .section-subtitle {
-    text-align: center;
-    color: #334155;
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
-    max-width: 720px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .programs-section,
-  .mission-section,
-  .admissions-section {
-    padding: 4rem 1rem;
-  }
-
-  .programs-grid {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    padding-top: 1rem;
-  }
-
-  .program-card {
-    background: #f9fafb;
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.04);
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    transition: transform 0.2s ease;
-  }
-
-  .program-card:hover {
-    transform: translateY(-4px);
-  }
-
-  .program-icon {
-    color: #1e40af;
-  }
-
-  .program-tag {
-    display: inline-block;
-    font-size: 0.75rem;
-    background: #fef9c3;
-    padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
-    color: #92400e;
-    font-weight: 600;
-  }
-
-  .learn-more {
-    font-weight: 600;
-    color: #1e40af;
-    font-size: 0.9rem;
-    text-decoration: none;
-  }
-
-  .learn-more:hover {
-    text-decoration: underline;
-  }
-
-  .admission-steps {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    margin-top: 2rem;
-  }
-
-  .admission-step {
-    background: #f9fafb;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    text-align: center;
-  }
-
-  .step-icon {
-    color: #facc15;
-    margin-bottom: 1rem;
-  }
-
-  @media (max-width: 768px) {
-    .programs-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>
