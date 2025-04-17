@@ -10,7 +10,6 @@ import Pricing from '~/components/widgets/Pricing.astro';
 
 import { headerData } from '~/navigation';
 import FAQs from '~/components/widgets/FAQs.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 
 const metadata = {
   title: 'BI College Aspire Gamber',
@@ -44,10 +43,6 @@ const metadata = {
       { variant: 'primary', text: 'Get Started', href: '#' },
       { text: 'Learn more', href: '#features' },
     ]}
-    image={{
-      src: '/assets/images/hero-image.png', // ✅ Replace with your actual image path
-      alt: 'BI College Aspire Gamber Hero Image',
-    }}
   >
     <Fragment slot="title">
       Empowering Students for a Brighter Future at <br />
@@ -56,7 +51,8 @@ const metadata = {
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        We provide cutting-edge education and a thriving learning environment for students to excel in academics and beyond.</span>
+        We provide cutting-edge education and a thriving learning environment for students to excel in academics and beyond.
+      </span>
       Our programs are designed to foster innovation, critical thinking, and lifelong success.
     </Fragment>
   </Hero2>
@@ -109,18 +105,14 @@ const metadata = {
     items={[
       {
         title: 'Mission',
-        description:
-          'Our mission is to provide high-quality education that empowers students to achieve their personal and professional goals.',
+        description: 'Our mission is to provide high-quality education that empowers students to achieve their personal and professional goals.',
       },
       {
         title: 'Vision',
         description: 'To be a leader in education, known for academic excellence, research, and innovation.',
       },
     ]}
-    image={{
-      src: '/assets/images/mission-vision.png', // ✅ Replace with your actual image path
-      alt: 'Mission and Vision Image',
-    }}
+   
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
@@ -178,9 +170,7 @@ const metadata = {
     items={[
       {
         title: 'How do I apply for admission?',
-        description:
-          'You can apply online by visiting our admissions page and submitting the required documents.',
-        icon: 'tabler:form',
+        description: 'You can apply online by visiting our admissions page and submitting the required documents.',
       },
       {
         title: 'Are scholarships available?',
@@ -189,14 +179,12 @@ const metadata = {
       },
       {
         title: 'What programs do you offer?',
-        description:
-          'We offer a wide range of undergraduate, graduate, and short courses in various fields of study.',
+        description: 'We offer a wide range of undergraduate, graduate, and short courses in various fields of study.',
         icon: 'tabler:book',
       },
       {
         title: 'Do you offer online learning?',
         description: `Yes, we provide flexible learning options, including online courses for certain programs.`,
-        icon: 'tabler:desktop',
       },
     ]}
   >
@@ -231,15 +219,4 @@ const metadata = {
       },
     ]}
   />
-
-  <!-- Blog -->
-  <BlogLatestPosts
-    id="blog"
-    title="Latest News & Updates"
-    information={`Stay up-to-date with our latest events, research highlights, and academic announcements.`}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </BlogLatestPosts>
 </Layout>
