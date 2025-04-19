@@ -3,7 +3,8 @@ import Layout from '~/layouts/PageLayout.astro';
 title: "Admissions - Aspire College Gamber";
 ---
 
-<Layout>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" client:load></script>
+<Layout style="background: #fdfcf7; will-change: transform; font-family: 'Inter', sans-serif;">
   <!-- Background Floating Icons -->
   <div class="background-icons">
     <iconify-icon icon="mdi:school" width="60" style="top: 10%; left: 15%; color: #3b82f6;"></iconify-icon>
@@ -24,7 +25,10 @@ title: "Admissions - Aspire College Gamber";
         <div class="countdown-box"><span id="minutes">--</span><label>Mins</label></div>
         <div class="countdown-box"><span id="seconds">--</span><label>Sec</label></div>
       </div>
-      <a href="https://aspirecolleges.edu.pk/online-admission/" class="main-button">Apply Now</a>
+      <div class="button-group">
+        <a href="https://aspirecolleges.edu.pk/online-admission/" class="main-button">Intermediate Admissions</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSctjoatGnewR6aGKboz7Sj8vLJ_ImgaaDvp3CEwbsojUeQHgA/viewform" class="main-button alt">Grades 1–8 Admissions</a>
+      </div>
     </div>
 
     <!-- Why Apply -->
@@ -65,175 +69,187 @@ title: "Admissions - Aspire College Gamber";
       </div>
     </div>
   </section>
-
-  <!-- Scripts -->
-  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" client:load></script>
-  <script client:load>
-    const deadline = new Date(); deadline.setDate(deadline.getDate() + 60);
-    const countdown = () => {
-      const now = new Date().getTime();
-      const diff = deadline - now;
-      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const s = Math.floor((diff % (1000 * 60)) / 1000);
-      document.getElementById("days").textContent = d;
-      document.getElementById("hours").textContent = h;
-      document.getElementById("minutes").textContent = m;
-      document.getElementById("seconds").textContent = s;
-    };
-    setInterval(countdown, 1000); countdown();
-
-    const testimonials = [
-      `"Aspire Gamber changed my life—supportive teachers and real growth!"`,
-      `"I found amazing mentors and made lifelong friends here."`,
-      `"The academics and environment helped me grow confidently."`
-    ];
-    let current = 0;
-    setInterval(() => {
-      const text = document.getElementById("testimonial-text");
-      current = (current + 1) % testimonials.length;
-      text.textContent = testimonials[current];
-    }, 5000);
-
-    function toggleFAQ(el) {
-      el.classList.toggle("open");
-    }
-  </script>
-
-  <!-- Styles -->
-  <style>
-    body {
-      background-color: #0a1628;
-      color: #f8fafc;
-      font-family: 'Georgia', serif;
-    }
-
-    .background-icons iconify-icon {
-      position: absolute;
-      opacity: 0.05;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .admission-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, auto);
-      gap: 2.5rem;
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .grid-box {
-      padding: 1.5rem;
-      border-radius: 12px;
-    }
-
-    .grid-top-left h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-      color: #facc15;
-    }
-
-    .hero-sub {
-      color: #facc15;
-      margin-bottom: 1rem;
-    }
-
-    .countdown-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .countdown-box {
-      background: #fff;
-      color: #111;
-      border-radius: 8px;
-      padding: 0.75rem;
-      min-width: 80px;
-      text-align: center;
-    }
-
-    .main-button {
-      background: #dc2626;
-      color: white;
-      font-weight: bold;
-      padding: 0.6rem 1.2rem;
-      border-radius: 9999px;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .grid-top-right h2,
-    .grid-bottom-left h2,
-    .grid-bottom-right h2 {
-      color: #facc15;
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-    }
-
-    .apply-list {
-      list-style: none;
-      padding: 0;
-    }
-
-    .apply-list li {
-      margin-bottom: 0.75rem;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .cloud-container {
-      display: flex;
-      justify-content: center;
-    }
-
-    .cloud {
-      background: #fff;
-      color: #111;
-      padding: 1.25rem 2rem;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      box-shadow: 0 6px 10px rgba(255,255,255,0.05);
-      text-align: center;
-      max-width: 480px;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid #444;
-      padding: 0.75rem 0;
-      cursor: pointer;
-    }
-
-    .faq-question {
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .faq-answer {
-      display: none;
-      margin-top: 0.5rem;
-      color: #facc15;
-    }
-
-    .faq-item.open .faq-answer {
-      display: block;
-    }
-
-    @media (max-width: 768px) {
-      .admission-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
 </Layout>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+  html, body {
+    background: #fdfcf7;
+    color: black;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    z-index: 0;
+  }
+
+  .background-icons iconify-icon {
+    position: absolute;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .admission-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 2.5rem;
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .grid-box {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .grid-top-left h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #1e40af;
+  }
+
+  .hero-sub {
+    color: #1e40af;
+    margin-bottom: 1rem;
+  }
+
+  .countdown-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .countdown-box {
+    background: #fff;
+    color: #111;
+    border-radius: 8px;
+    padding: 0.75rem;
+    min-width: 80px;
+    text-align: center;
+  }
+
+  .button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .main-button {
+    background: #dc2626;
+    color: white;
+    font-weight: bold;
+    padding: 0.6rem 1.2rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .main-button.alt {
+    background: #1e40af;
+  }
+
+  .grid-top-right h2,
+  .grid-bottom-left h2,
+  .grid-bottom-right h2 {
+    color: #1e40af;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .apply-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .apply-list li {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .cloud-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .cloud {
+    background: #fff;
+    color: #111;
+    padding: 1.25rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.05);
+    text-align: center;
+    max-width: 480px;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid #ccc;
+    padding: 0.75rem 0;
+    cursor: pointer;
+  }
+
+  .faq-question {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .faq-answer {
+    display: none;
+    margin-top: 0.5rem;
+    color: #1e40af;
+  }
+
+  .faq-item.open .faq-answer {
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .admission-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script client:load>
+  const deadline = new Date(); deadline.setDate(deadline.getDate() + 60);
+  const countdown = () => {
+    const now = new Date().getTime();
+    const diff = deadline - now;
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((diff % (1000 * 60)) / 1000);
+    document.getElementById("days").textContent = d;
+    document.getElementById("hours").textContent = h;
+    document.getElementById("minutes").textContent = m;
+    document.getElementById("seconds").textContent = s;
+  };
+  setInterval(countdown, 1000); countdown();
+
+  const testimonials = [
+    "Aspire Gamber changed my life—supportive teachers and real growth!",
+    "I found amazing mentors and made lifelong friends here.",
+    "The academics and environment helped me grow confidently."
+  ];
+  let current = 0;
+  setInterval(() => {
+    const text = document.getElementById("testimonial-text");
+    current = (current + 1) % testimonials.length;
+    text.textContent = testimonials[current];
+  }, 5000);
+
+  function toggleFAQ(el) {
+    el.classList.toggle("open");
+  }
+</script>
